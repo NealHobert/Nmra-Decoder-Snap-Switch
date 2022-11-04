@@ -1,13 +1,16 @@
+// DCC Accesory Decode based on the NMRA DCC Accessory Example Code
 #include <NmraDcc.h>
 NmraDcc  Dcc ;
 DCC_MSG  Packet ;
 
 // Define the Arduino input Pin number for the DCC Signal 
 #define DCC_PIN     2
+
 // Enter the number of accessories here
 #define NUMACCESSORIES 10
+
 // Enter the millisecond delay between engaging the relaye and disengaging the relay
-#define RELAYTIME 200
+#define RELAYTIME 100
 
 struct CVPair
 {
@@ -17,12 +20,13 @@ struct CVPair
 
 typedef struct DCCAccessoryData {
   uint16_t  address;        // User Configurable DCC address
-  byte      closepin;       // User Configurable Arduino pin = direction 1
-  byte      openpin;        // User Configurable Arduino pin = direction 0
+  byte      closepin;       // User Configurable Arduino pin to close the switch
+  byte      openpin;        // User Configurable Arduino pin to throw the switch
   uint8_t   direction;       // Internal use DCC state of accessory, 1=on, 0=off
   uint8_t   previousDirection;  // Internal use DCC previous state of accessory, 1=on, 0=off
 };
 
+// initialize the array of accessories
 DCCAccessoryData accessory[NUMACCESSORIES];
 
 CVPair FactoryDefaultCVs [] =
@@ -84,6 +88,7 @@ void notifyDccAccTurnoutBoard( uint16_t BoardAddr, uint8_t OutputPair, uint8_t D
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Output Addressing Mode
 void notifyDccAccTurnoutOutput( uint16_t Addr, uint8_t Direction, uint8_t OutputPower )
 {
+  // loop through the
   for(int i=0; i<NUMACCESSORIES; i++) {
     if(accessory[i].address == Addr){
       if(1==Direction && accessory[i].previousDirection != Direction){
