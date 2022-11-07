@@ -7,7 +7,7 @@ DCC_MSG  Packet ;
 #define DCC_PIN     2
 
 // Enter the number of accessories here
-#define NUMACCESSORIES 10
+#define NUMACCESSORIES 11
 
 // Enter the millisecond delay between engaging the relaye and disengaging the relay
 #define RELAYTIME 100
@@ -24,6 +24,7 @@ typedef struct DCCAccessoryData {
   byte      openpin;        // User Configurable Arduino pin to throw the switch
   uint8_t   direction;       // Internal use DCC state of accessory, 1=on, 0=off
   uint8_t   previousDirection;  // Internal use DCC previous state of accessory, 1=on, 0=off
+  uint8_t   isSwitch;  // Internal use DCC previous state of accessory, 1=on, 0=off
 };
 
 // initialize the array of accessories
@@ -91,28 +92,43 @@ void notifyDccAccTurnoutOutput( uint16_t Addr, uint8_t Direction, uint8_t Output
   // loop through the
   for(int i=0; i<NUMACCESSORIES; i++) {
     if(accessory[i].address == Addr){
-      if(1==Direction && accessory[i].previousDirection != Direction){
+      if(accessory[i].isSwitch){
+        Serial.print("changing switch ");
+        Serial.println(accessory[i].address);
+        if(1==Direction && accessory[i].previousDirection != Direction){
+          Serial.print("notifyDccAccTurnoutOutput: ") ;
+          Serial.print(Addr,DEC) ;
+          Serial.print(',');
+          Serial.print(Direction,DEC) ;
+          Serial.print(',');
+          Serial.println(accessory[i].previousDirection);
+          digitalWrite(accessory[i].closepin, 1);
+          delay(RELAYTIME);
+          digitalWrite(accessory[i].closepin, 0);
+          accessory[i].previousDirection = Direction;
+        } else if(0==Direction && accessory[i].previousDirection != Direction){
+          Serial.print("notifyDccAccTurnoutOutput: ") ;
+          Serial.print(Addr,DEC) ;
+          Serial.print(',');
+          Serial.print(Direction,DEC) ;
+          Serial.print(',');
+          Serial.println(accessory[i].previousDirection);
+          digitalWrite(accessory[i].openpin, 1);
+          delay(RELAYTIME);
+          digitalWrite(accessory[i].openpin, 0);
+          accessory[i].previousDirection = Direction;
+        }
+      }
+      else{
+        Serial.print("changing light ");
+        Serial.println(accessory[i].address);
         Serial.print("notifyDccAccTurnoutOutput: ") ;
         Serial.print(Addr,DEC) ;
         Serial.print(',');
         Serial.print(Direction,DEC) ;
         Serial.print(',');
         Serial.println(accessory[i].previousDirection);
-        digitalWrite(accessory[i].closepin, 1);
-        delay(RELAYTIME);
-        digitalWrite(accessory[i].closepin, 0);
-        accessory[i].previousDirection = Direction;
-      } else if(0==Direction && accessory[i].previousDirection != Direction){
-        Serial.print("notifyDccAccTurnoutOutput: ") ;
-        Serial.print(Addr,DEC) ;
-        Serial.print(',');
-        Serial.print(Direction,DEC) ;
-        Serial.print(',');
-        Serial.println(accessory[i].previousDirection);
-        digitalWrite(accessory[i].openpin, 1);
-        delay(RELAYTIME);
-        digitalWrite(accessory[i].openpin, 0);
-        accessory[i].previousDirection = Direction;
+        digitalWrite(accessory[i].closepin, Direction);
       }
     }
   }  
@@ -146,60 +162,77 @@ void setup()
   accessory[0].closepin = 23; // Arduino pin
   accessory[0].direction = HIGH;
   accessory[0].previousDirection = LOW;
+  accessory[0].isSwitch = HIGH;
 
   accessory[1].address = 123;
   accessory[1].openpin = 24; // Arduino pin
   accessory[1].closepin = 25; // Arduino pin
   accessory[1].direction = HIGH;
   accessory[1].previousDirection = LOW;
+  accessory[1].isSwitch = HIGH;
 
   accessory[2].address = 124;
   accessory[2].openpin = 26; // Arduino pin
   accessory[2].closepin = 27; // Arduino pin
   accessory[2].direction = HIGH;
   accessory[2].previousDirection = LOW;
+  accessory[2].isSwitch = HIGH;
 
   accessory[3].address = 125;
   accessory[3].openpin = 28; // Arduino pin
   accessory[3].closepin = 29; // Arduino pin
   accessory[3].direction = HIGH;
   accessory[3].previousDirection = LOW;
+  accessory[3].isSwitch = HIGH;
 
   accessory[4].address = 126;
   accessory[4].openpin = 30; // Arduino pin
   accessory[4].closepin = 31; // Arduino pin
   accessory[4].direction = HIGH;
   accessory[4].previousDirection = LOW;
+  accessory[4].isSwitch = HIGH;
 
   accessory[5].address = 127;
   accessory[5].openpin = 32; // Arduino pin
   accessory[5].closepin = 33; // Arduino pin
   accessory[5].direction = HIGH;
   accessory[5].previousDirection = LOW;
+  accessory[5].isSwitch = HIGH;
 
   accessory[6].address = 128;
   accessory[6].openpin = 34; // Arduino pin
   accessory[6].closepin = 35; // Arduino pin
   accessory[6].direction = HIGH;
   accessory[6].previousDirection = LOW;
+  accessory[6].isSwitch = HIGH;
 
   accessory[7].address = 129;
   accessory[7].openpin = 36; // Arduino pin
   accessory[7].closepin = 37; // Arduino pin
   accessory[7].direction = HIGH;
   accessory[7].previousDirection = LOW;
+  accessory[7].isSwitch = HIGH;
 
   accessory[8].address = 130;
   accessory[8].openpin = 38; // Arduino pin
   accessory[8].closepin = 39; // Arduino pin
   accessory[8].direction = HIGH;
   accessory[8].previousDirection = LOW;
+  accessory[8].isSwitch = HIGH;
 
   accessory[9].address = 131;
   accessory[9].openpin = 40; // Arduino pin
   accessory[9].closepin = 41; // Arduino pin
   accessory[9].direction = HIGH;
   accessory[9].previousDirection = LOW;
+  accessory[9].isSwitch = HIGH;
+
+  accessory[10].address = 88;
+  accessory[10].openpin = 42; // Arduino pin
+  accessory[10].closepin = 42; // Arduino pin
+  accessory[10].direction = HIGH;
+  accessory[10].previousDirection = LOW;
+  accessory[10].isSwitch = HIGH;
 
   Serial.println("read accessory settings begin: ");
   for(int i=0; i<NUMACCESSORIES; i++) {
