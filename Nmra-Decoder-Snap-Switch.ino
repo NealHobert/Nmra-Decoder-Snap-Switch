@@ -1,4 +1,9 @@
 // DCC Accesory Decode based on the NMRA DCC Accessory Example Code
+// For use with an Arduino Uno or Mega
+// The output pins will not drive the snap switch
+// The output pins are meant to drive the inputs of a solid state relay board.
+// Example Relay Board: SainSmart 8-Channel 5V Solid State Relay Module Board for Arduino Uno Duemilanove MEGA2560 MEGA1280 ARM DSP PIC
+
 #include <NmraDcc.h>
 NmraDcc  Dcc ;
 DCC_MSG  Packet ;
@@ -6,7 +11,7 @@ DCC_MSG  Packet ;
 // Define the Arduino input Pin number for the DCC Signal 
 #define DCC_PIN     2
 
-// Enter the number of accessories here
+// Enter the number of DCC accessories / addresses controlled by this Arduino
 #define NUMACCESSORIES 11
 
 // Enter the millisecond delay between engaging the relaye and disengaging the relay
@@ -157,6 +162,8 @@ void setup()
   // pinMode(6, OUTPUT);
   // pinMode(7, OUTPUT);
   
+  // Assign DCC Address and Output pins for each decoder
+  // This could possibly be accomplished in a loop statement if your DCC addresses and output pins are sequential.
   accessory[0].address = 122;
   accessory[0].openpin = 22; // Arduino pin
   accessory[0].closepin = 23; // Arduino pin
