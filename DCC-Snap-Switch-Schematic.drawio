@@ -1,0 +1,154 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="Page-1" id="VIF5znFn5U0gcKHPHjAH">
+    <mxGraphModel dx="946" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xlOGiat-seEvUqm4EhGD-39" connectable="0" parent="1" style="group;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="120" width="140" x="660" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-27" connectable="0" parent="xlOGiat-seEvUqm4EhGD-39" style="group;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="120" width="82.5" x="29" y="29" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-26" parent="xlOGiat-seEvUqm4EhGD-27" style="rounded=0;whiteSpace=wrap;html=1;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="120" width="82.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-52" edge="1" parent="xlOGiat-seEvUqm4EhGD-27" source="xlOGiat-seEvUqm4EhGD-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.8;exitDx=0;exitDy=0;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-29" y="47" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-24" parent="xlOGiat-seEvUqm4EhGD-27" style="html=1;shape=mxgraph.electrical.electro-mechanical.singleSwitch;aspect=fixed;elSwitchState=off;rotation=0;" value="" vertex="1">
+          <mxGeometry height="20" width="75" x="4" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-25" parent="xlOGiat-seEvUqm4EhGD-27" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.inductor_5;direction=south;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="100" width="14" x="34" y="22" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-37" parent="xlOGiat-seEvUqm4EhGD-39" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;rotation=0;" value="Solid State Relay" vertex="1">
+          <mxGeometry height="55" width="60" x="8" y="-7" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-1" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.opto-coupler;" value="" vertex="1">
+          <mxGeometry height="60" width="99" x="279" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-2" parent="1" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.resistors.resistor_2;" value="1K" vertex="1">
+          <mxGeometry height="20" width="100" x="172" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-3" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.195;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-7" parent="1" style="pointerEvents=1;verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=middle;shape=mxgraph.electrical.signal_sources.dc_source_1;flipH=1;legacyAnchorPoints=0;labelPosition=center;" value="DCC&amp;nbsp;&lt;div&gt;Track&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="70" x="120" y="272.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-9" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.58;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-12" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.195;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.58;entryY=0.935;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="298" y="370" />
+              <mxPoint x="149" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-13" parent="1" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=ac;" value="" vertex="1">
+          <mxGeometry height="60" width="60" x="980" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-54" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.645;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.8;entryDx=0;entryDy=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-14" parent="1" style="pointerEvents=1;verticalLabelPosition=middle;shadow=0;dashed=0;align=left;html=1;verticalAlign=middle;shape=mxgraph.electrical.inductors.inductor_5;direction=south;labelPosition=right;rotation=90;horizontal=0;" value="Switch Open Coil" vertex="1">
+          <mxGeometry height="100" width="14" x="930" y="295.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-15" parent="1" style="pointerEvents=1;verticalLabelPosition=middle;shadow=0;dashed=0;align=left;html=1;verticalAlign=middle;shape=mxgraph.electrical.signal_sources.source;aspect=fixed;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];elSignalType=dc3;rotation=0;horizontal=1;labelPosition=left;spacingLeft=-10;" value="+5 Volt DC" vertex="1">
+          <mxGeometry height="60" width="60" x="520" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-16" parent="1" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.signal_ground;" value="GND" vertex="1">
+          <mxGeometry height="30" width="45" x="528" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-17" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.8;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="70" />
+              <mxPoint x="358" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-20" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="428" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-23" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="428" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-18" parent="1" style="pointerEvents=1;verticalLabelPosition=middle;shadow=0;dashed=0;align=center;html=1;verticalAlign=middle;shape=mxgraph.electrical.resistors.resistor_2;rotation=90;horizontal=0;labelPosition=center;spacingLeft=50;" value="10K" vertex="1">
+          <mxGeometry height="20" width="100" x="378" y="289.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-41" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=30;exitPerimeter=0;entryX=0;entryY=0.645;entryDx=0;entryDy=0;endArrow=none;endFill=0;entryPerimeter=0;" target="xlOGiat-seEvUqm4EhGD-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-21" parent="1" style="shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.dual_inline_ic;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t;whiteSpace=wrap;" value="Arduino" vertex="1">
+          <mxGeometry height="200" width="100" x="510" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-22" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=30;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-32" parent="1" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.signal_ground;" value="GND" vertex="1">
+          <mxGeometry height="30" width="45" x="820" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-33" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.645;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-43" connectable="0" parent="1" style="group;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="120" width="140" x="660" y="377" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-44" connectable="0" parent="xlOGiat-seEvUqm4EhGD-43" style="group;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="120" width="82.5" x="29" y="29" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-45" parent="xlOGiat-seEvUqm4EhGD-44" style="rounded=0;whiteSpace=wrap;html=1;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="120" width="82.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-46" parent="xlOGiat-seEvUqm4EhGD-44" style="html=1;shape=mxgraph.electrical.electro-mechanical.singleSwitch;aspect=fixed;elSwitchState=off;rotation=0;" value="" vertex="1">
+          <mxGeometry height="20" width="75" x="4" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-47" parent="xlOGiat-seEvUqm4EhGD-44" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.inductors.inductor_5;direction=south;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="100" width="14" x="34" y="22" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;rotation=0;" value="Solid State Relay" vertex="1">
+          <mxGeometry height="55" width="60" x="668" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-50" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=50;exitPerimeter=0;entryX=0;entryY=0.645;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-51" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;jumpStyle=arc;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="453" />
+              <mxPoint x="660" y="210" />
+              <mxPoint x="1010" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-55" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.645;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.8;entryDx=0;entryDy=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-46">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="388" />
+              <mxPoint x="880" y="453" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-58" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.645;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-53" parent="1" style="pointerEvents=1;verticalLabelPosition=middle;shadow=0;dashed=0;align=left;html=1;verticalAlign=middle;shape=mxgraph.electrical.inductors.inductor_5;direction=south;labelPosition=right;rotation=90;horizontal=0;" value="Switch Close Coil" vertex="1">
+          <mxGeometry height="100" width="14" x="930" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="xlOGiat-seEvUqm4EhGD-56" edge="1" parent="1" source="xlOGiat-seEvUqm4EhGD-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.645;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" target="xlOGiat-seEvUqm4EhGD-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
