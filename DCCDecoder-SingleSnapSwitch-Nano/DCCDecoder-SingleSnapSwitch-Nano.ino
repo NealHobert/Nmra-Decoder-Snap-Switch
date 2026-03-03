@@ -6,17 +6,20 @@
 // https://www.sainsmart.com/products/2-channel-5v-solid-state-relay?variant=40780114165839
 
 #include <NmraDcc.h>
+
 NmraDcc  Dcc ;
 DCC_MSG  Packet ;
 
 // Define the Arduino input Pin number for the DCC Signal 
-#define DCC_PIN     1
+#define DCC_PIN 1
 
 // Enter the number of DCC accessories / addresses controlled by this Arduino
 #define NUMACCESSORIES 1
 
 // Enter the millisecond delay between engaging the relay and disengaging the relay
 #define RELAYTIME 100
+
+#define DECODER_ADDRESS 3
 
 struct CVPair
 {
@@ -51,13 +54,13 @@ void notifyCVResetFactoryDefault()
   FactoryDefaultCVIndex = sizeof(FactoryDefaultCVs)/sizeof(CVPair);
 };
 
-const int DccAckPin = 3 ;
+const int DccAckPin = 3;
 
 // This function is called by the NmraDcc library when a DCC ACK needs to be sent
 // Calling this function should cause an increased 60ma current drain on the power supply for 6ms to ACK a CV Read 
 void notifyCVAck(void)
 {
-  Serial.println("notifyCVAck") ;
+  Serial.println("notifyCVAck");
   
   digitalWrite( DccAckPin, HIGH );
   delay( 6 );  
@@ -82,14 +85,14 @@ void notifyDccMsg( DCC_MSG * Msg)
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Board Addressing Mode
 void notifyDccAccTurnoutBoard( uint16_t BoardAddr, uint8_t OutputPair, uint8_t Direction, uint8_t OutputPower )
 {
-  Serial.print("notifyDccAccTurnoutBoard: ") ;
-  Serial.print(BoardAddr,DEC) ;
+  Serial.print("notifyDccAccTurnoutBoard: ");
+  Serial.print(BoardAddr,DEC);
   Serial.print(',');
-  Serial.print(OutputPair,DEC) ;
+  Serial.print(OutputPair,DEC);
   Serial.print(',');
-  Serial.print(Direction,DEC) ;
+  Serial.print(Direction,DEC);
   Serial.print(',');
-  Serial.println(OutputPower, HEX) ;
+  Serial.println(OutputPower, HEX);
 }
 
 // This function is called whenever a normal DCC Turnout Packet is received and we're in Output Addressing Mode
@@ -102,10 +105,10 @@ void notifyDccAccTurnoutOutput( uint16_t Addr, uint8_t Direction, uint8_t Output
         Serial.print("changing switch ");
         Serial.println(accessory[i].address);
         if(1==Direction && accessory[i].previousDirection != Direction){
-          Serial.print("notifyDccAccTurnoutOutput: ") ;
-          Serial.print(Addr,DEC) ;
+          Serial.print("notifyDccAccTurnoutOutput: ");
+          Serial.print(Addr,DEC);
           Serial.print(',');
-          Serial.print(Direction,DEC) ;
+          Serial.print(Direction,DEC);
           Serial.print(',');
           Serial.println(accessory[i].previousDirection);
           digitalWrite(accessory[i].closepin, 1);
@@ -113,10 +116,10 @@ void notifyDccAccTurnoutOutput( uint16_t Addr, uint8_t Direction, uint8_t Output
           digitalWrite(accessory[i].closepin, 0);
           accessory[i].previousDirection = Direction;
         } else if(0==Direction && accessory[i].previousDirection != Direction){
-          Serial.print("notifyDccAccTurnoutOutput: ") ;
-          Serial.print(Addr,DEC) ;
+          Serial.print("notifyDccAccTurnoutOutput: ");
+          Serial.print(Addr,DEC);
           Serial.print(',');
-          Serial.print(Direction,DEC) ;
+          Serial.print(Direction,DEC);
           Serial.print(',');
           Serial.println(accessory[i].previousDirection);
           digitalWrite(accessory[i].openpin, 1);
@@ -128,10 +131,10 @@ void notifyDccAccTurnoutOutput( uint16_t Addr, uint8_t Direction, uint8_t Output
       else{
         Serial.print("changing light ");
         Serial.println(accessory[i].address);
-        Serial.print("notifyDccAccTurnoutOutput: ") ;
-        Serial.print(Addr,DEC) ;
+        Serial.print("notifyDccAccTurnoutOutput: ");
+        Serial.print(Addr,DEC);
         Serial.print(',');
-        Serial.print(Direction,DEC) ;
+        Serial.print(Direction,DEC);
         Serial.print(',');
         Serial.println(accessory[i].previousDirection);
         digitalWrite(accessory[i].closepin, Direction);
@@ -143,10 +146,10 @@ void notifyDccAccTurnoutOutput( uint16_t Addr, uint8_t Direction, uint8_t Output
 // This function is called whenever a DCC Signal Aspect Packet is received
 void notifyDccSigOutputState( uint16_t Addr, uint8_t State)
 {
-  Serial.print("notifyDccSigOutputState: ") ;
-  Serial.print(Addr,DEC) ;
+  Serial.print("notifyDccSigOutputState: ");
+  Serial.print(Addr,DEC);
   Serial.print(',');
-  Serial.println(State, HEX) ;
+  Serial.println(State, HEX);
 }
 
 void setup()
@@ -155,7 +158,11 @@ void setup()
   uint8_t maxWaitLoops = 255;
   while(!Serial && maxWaitLoops--)
     delay(20);
-      
+  
+  DECODER_ADDRESS = Dcc.getCV(DEFAULT_ACCESSORY_DECODER_ADDRESS);
+  Serial.print("DECODER_ADDRESS: ");
+  Serial.println(DECODER_ADDRESS);
+  
   // Configure the DCC CV Programing ACK pin for an output
   pinMode( DccAckPin, OUTPUT );
   // pinMode(4, OUTPUT);
@@ -165,7 +172,7 @@ void setup()
   
   // Assign DCC Address and Output pins for each decoder
   // This could possibly be accomplished in a loop statement if your DCC addresses and output pins are sequential.
-  accessory[0].address = 122;
+  accessory[0].address = DECODER_ADDRESS;
   accessory[0].openpin = 22; // Arduino pin
   accessory[0].closepin = 23; // Arduino pin
   accessory[0].direction = HIGH;
